@@ -6,5 +6,5 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo nano /etc/hostname
 sudo nano /etc/hosts
 sudo reboot
-
-sudo apt-get install docker docker-compose -y
+sudo curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+sudo apt-get install docker-compose -y
