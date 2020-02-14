@@ -16,7 +16,7 @@ cat /usr/local/bin/Backup.sh
 
 # VARIABLEN - HIER EDITIEREN
 #BACKUP_PFAD="/NFS_DATA_2/"
-BACKUP_PFAD="/media/usbfestplatte/"
+BACKUP_PFAD="/media/usbfestplatte"
 BACKUP_ANZAHL="7"
 BACKUP_NAME="RaspberryPiBackupDC"
 DIENSTE_START_STOP="service mysql"
@@ -27,8 +27,8 @@ DIENSTE_START_STOP="service mysql"
 
 # Backup mit Hilfe von dd erstellen und im angegebenen Pfad speichern
 #dd if=/dev/mmcblk0 of=${BACKUP_PFAD}/${BACKUP_NAME}-$(date +%Y%m%d-%H%M%S).img bs=1MB
-dd if=/dev/mmcblk0 of=${BACKUP_PFAD}/${BACKUP_NAME}.img bs=1MB
-~/bin/./pishrink.sh ${BACKUP_PFAD}/${BACKUP_NAME}.img
+#dd if=/dev/mmcblk0 of=${BACKUP_PFAD}/${BACKUP_NAME}.img bs=1MB
+/home/pi/bin/./pishrink.sh ${BACKUP_PFAD}/${BACKUP_NAME}.img
 #~/bin/./pishrink.sh /NFS_DATA_2/RaspberryPiBackupDC.img
 mv ${BACKUP_PFAD}/${BACKUP_NAME}.img ${BACKUP_PFAD}/shrink/${BACKUP_NAME}-$(date +%Y%m%d-%H%M%S).img
 
@@ -38,7 +38,7 @@ mv ${BACKUP_PFAD}/${BACKUP_NAME}.img ${BACKUP_PFAD}/shrink/${BACKUP_NAME}-$(date
 #${START_SERVICES} start
 
 # Alte Sicherungen die nach X neuen Sicherungen entfernen
-pushd ${BACKUP_PFAD}; ls -tr ${BACKUP_PFAD}/${BACKUP_NAME}* | head -n -${BACKUP_ANZAHL} | xargs rm; popd
+pushd ${BACKUP_PFAD}; ls -tr ${BACKUP_PFAD}/shrink/${BACKUP_NAME}* | head -n -${BACKUP_ANZAHL} | xargs rm; popd
 
 
 sudo crontab -e
