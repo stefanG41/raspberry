@@ -18,7 +18,8 @@ cat /usr/local/bin/Backup.sh
 #BACKUP_PFAD="/NFS_DATA_2/"
 BACKUP_PFAD="/media/usbfestplatte"
 BACKUP_ANZAHL="7"
-BACKUP_NAME="RaspberryPiBackupDC"
+BACKUP_NAME="RaspberryPiBackup"
+SHIRNK_PATH="/home/pi/bin/pishrink.sh"
 DIENSTE_START_STOP="service mysql"
 # ENDE VARIABLEN
 
@@ -26,9 +27,9 @@ DIENSTE_START_STOP="service mysql"
 #${DIENSTE_START_STOP} stop
 
 # Backup mit Hilfe von dd erstellen und im angegebenen Pfad speichern
-#dd if=/dev/mmcblk0 of=${BACKUP_PFAD}/${BACKUP_NAME}-$(date +%Y%m%d-%H%M%S).img bs=1MB
-#dd if=/dev/mmcblk0 of=${BACKUP_PFAD}/${BACKUP_NAME}.img bs=1MB
-/home/pi/bin/./pishrink.sh ${BACKUP_PFAD}/${BACKUP_NAME}.img
+dd if=/dev/mmcblk0 of=${BACKUP_PFAD}/${BACKUP_NAME}.img bs=1MB
+# pishring verkleinert das ganze Backup auf das minimum 
+${SHIRNK_PATH} ${BACKUP_PFAD}/${BACKUP_NAME}.img
 #~/bin/./pishrink.sh /NFS_DATA_2/RaspberryPiBackupDC.img
 mv ${BACKUP_PFAD}/${BACKUP_NAME}.img ${BACKUP_PFAD}/shrink/${BACKUP_NAME}-$(date +%Y%m%d-%H%M%S).img
 
