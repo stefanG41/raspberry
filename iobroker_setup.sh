@@ -13,7 +13,8 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     4_install_node_and_nodejs
     5_check_nodes_version
     6_install_ioBroker_setup
-    7_setup_installation_info
+    7_io_standard_adpater
+    8_setup_installation_info
 else
     1_server_update_upgrade
     2_remove_node_and_nodejs
@@ -21,7 +22,8 @@ else
     4_install_node_and_nodejs
     5_check_nodes_version
     6_install_ioBroker_setup
-    7_setup_installation_info
+    7_io_standard_adpater
+    8_setup_installation_info
 fi
 }
 
@@ -70,7 +72,27 @@ npm -v
 curl -sL https://iobroker.net/install.sh | bash -
 }
 
-7_setup_installation_info ()
+7_io_standard_adpater ()
+{
+MY_HOSTNAME=`uname -n`
+
+cd /opt/iobroker
+./iobroker add zigbee  --host $MY_HOSTNAME
+./iobroker add tr-064  --host $MY_HOSTNAME
+./iobroker add backitup  --host $MY_HOSTNAME
+./iobroker add alexa2  --host $MY_HOSTNAME
+./iobroker add ping  --host $MY_HOSTNAME
+./iobroker add fritzdect  --host $MY_HOSTNAME
+./iobroker add bosesoundtouch  --host $MY_HOSTNAME
+./iobroker add harmony  --host $MY_HOSTNAME
+./iobroker add samsung  --host $MY_HOSTNAME
+./iobroker add shelly  --host $MY_HOSTNAME
+./iobroker add synology  --host $MY_HOSTNAME
+./iobroker add telegram  --host $MY_HOSTNAME
+./iobroker add vis  --host $MY_HOSTNAME
+}
+
+8_setup_installation_info ()
 {
 echo " reboot is required"
 }
