@@ -1,17 +1,14 @@
 # install first 
 
-sudo apt-get -y install ntfs-3g hfsutils hfsprogs exfat-fuse
-sudo mkdir /media/usbfestplatte
-sudo blkid -o list -w /dev/null
+sudo apt-get -y install ntfs-3g hfsutils hfsprogs exfat-fuse && sudo mkdir /media/usbfestplatte && sudo blkid -o list -w /dev/null
 
 lsblk
 # mount first usb
 sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sda"verfiy right path" /media/usbfestplatte
-sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sda /media/usbfestplatte
+sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sda2 /media/usbfestplatte
 
+sudo touch /usr/local/bin/Backup.sh && sudo chmod +x /usr/local/bin/Backup.sh && sudo nano /usr/local/bin/Backup.sh
 
-nano /usr/local/bin/Backup.sh
-chmod +x /usr/local/bin/Backup.sh
 
 #!/bin/bash
 
