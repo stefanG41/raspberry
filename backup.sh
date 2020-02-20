@@ -4,11 +4,17 @@ sudo apt-get -y install ntfs-3g hfsutils hfsprogs exfat-fuse && sudo mkdir /medi
 
 lsblk
 # mount first usb
-sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sda"verfiy right path" /media/usbfestplatte
+# sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sda"verfiy right path" /media/usbfestplatte
 sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sda2 /media/usbfestplatte
 
 sudo touch /usr/local/bin/Backup.sh && sudo chmod +x /usr/local/bin/Backup.sh && sudo nano /usr/local/bin/Backup.sh
 
+#————— shrink script —————-
+wget https://raw.githubusercontent.com/Drewsif/PiShrink/master/pishrink.sh -P ~/bin
+
+chmod +x ~/bin/pishrink.sh
+
+#—————- backup script —————
 
 #!/bin/bash
 
@@ -37,6 +43,6 @@ mv ${BACKUP_PFAD}/${BACKUP_NAME}.img ${BACKUP_PFAD}/shrink/${BACKUP_NAME}-$(date
 # Alte Sicherungen die nach X neuen Sicherungen entfernen
 pushd ${BACKUP_PFAD}; ls -tr ${BACKUP_PFAD}/shrink/${BACKUP_NAME}* | head -n -${BACKUP_ANZAHL} | xargs rm; popd
 
-
+#—————- create cronjob —————
 sudo crontab -e
 00 01 * * 0 /usr/local/bin/Backup.sh
