@@ -13,7 +13,6 @@ sudo touch /usr/local/bin/Backup.sh && sudo chmod +x /usr/local/bin/Backup.sh &&
 #!/bin/bash
 
 # VARIABLEN - HIER EDITIEREN
-#BACKUP_PFAD="/NFS_DATA_2/"
 BACKUP_PFAD="/media/usbfestplatte"
 BACKUP_ANZAHL="7"
 BACKUP_NAME="RaspberryPiBackup"
@@ -28,7 +27,6 @@ DIENSTE_START_STOP="service mysql"
 dd if=/dev/mmcblk0 of=${BACKUP_PFAD}/${BACKUP_NAME}.img bs=1MB
 # pishring verkleinert das ganze Backup auf das minimum 
 ${SHIRNK_PATH} ${BACKUP_PFAD}/${BACKUP_NAME}.img
-#~/bin/./pishrink.sh /NFS_DATA_2/RaspberryPiBackupDC.img
 mv ${BACKUP_PFAD}/${BACKUP_NAME}.img ${BACKUP_PFAD}/shrink/${BACKUP_NAME}-$(date +%Y%m%d-%H%M%S).img
 
 
