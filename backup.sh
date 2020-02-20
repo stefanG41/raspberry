@@ -10,7 +10,8 @@ sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sda"verfiy right path" 
 sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sda /media/usbfestplatte
 
 
-cat /usr/local/bin/Backup.sh
+nano /usr/local/bin/Backup.sh
+chmod +x /usr/local/bin/Backup.sh
 
 #!/bin/bash
 
