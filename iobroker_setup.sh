@@ -83,14 +83,15 @@ cd /opt/iobroker
 ./iobroker add alexa2  --host $MY_HOSTNAME
 ./iobroker add ping  --host $MY_HOSTNAME
 ./iobroker add fritzdect  --host $MY_HOSTNAME
-./iobroker add bosesoundtouch  --host $MY_HOSTNAME
+#./iobroker add bosesoundtouch  --host $MY_HOSTNAME
 ./iobroker add harmony  --host $MY_HOSTNAME
-./iobroker add samsung  --host $MY_HOSTNAME
+#./iobroker add samsung  --host $MY_HOSTNAME
 ./iobroker add shelly  --host $MY_HOSTNAME
-./iobroker add synology  --host $MY_HOSTNAME
+#./iobroker add synology  --host $MY_HOSTNAME
 ./iobroker add telegram  --host $MY_HOSTNAME
 ./iobroker add vis  --host $MY_HOSTNAME
 ./iobroker add javascript  --host $MY_HOSTNAME
+#./iobroker add innogy-smarthome  --host $MY_HOSTNAME
 }
 
 8_setup_installation_info ()
