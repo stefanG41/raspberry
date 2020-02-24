@@ -12,7 +12,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
 
     1_icon=icons-addictive-flavour-png
     2_icon=icons-fatcow-hosting
-    3_icon=icons-icons
+    3_icon=icons-icons8
     4_icon=icons-material-png
     5_icon=icons-material-svg
     6_icon=icons-mfd-png
