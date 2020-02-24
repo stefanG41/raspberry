@@ -10,29 +10,29 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
   
     MY_HOSTNAME=`uname -n`
 
-    1=icons-addictive-flavour-png
-    2=icons-fatcow-hosting
-    3=icons-icons
-    4=
-    5=
-    6=
-    7=
-    8=
-    9=
-    10=
+    1_icon=icons-addictive-flavour-png
+    2_icon=icons-fatcow-hosting
+    3_icon=icons-icons
+    4_icon=icons-material-png
+    5_icon=icons-material-svg
+    6_icon=icons-mfd-png
+    7_icon=icons-mfd-svg
+    8_icon=icons-open-icon-library-png
+    9_icon=icons-ultimate-png
+#    10_icon=
    
     
     cd /opt/iobroker/
-    ./iobroker add $1 --host $MY_HOSTNAME
-    ./iobroker add $2 --host $MY_HOSTNAME
-    ./iobroker add $3 --host $MY_HOSTNAME
-    ./iobroker add $4 --host $MY_HOSTNAME
-    ./iobroker add $5 --host $MY_HOSTNAME
-    ./iobroker add $6 --host $MY_HOSTNAME
-    ./iobroker add $7 --host $MY_HOSTNAME
-    ./iobroker add $8 --host $MY_HOSTNAME
-    ./iobroker add $9 --host $MY_HOSTNAME
-    ./iobroker add $10 --host $MY_HOSTNAME
+#    ./iobroker add $1_icon --host $MY_HOSTNAME
+    ./iobroker add $2_icon --host $MY_HOSTNAME
+    ./iobroker add $3_icon --host $MY_HOSTNAME
+    ./iobroker add $4_icon --host $MY_HOSTNAME
+    ./iobroker add $5_icon --host $MY_HOSTNAME
+    ./iobroker add $6_icon --host $MY_HOSTNAME
+    ./iobroker add $7_icon --host $MY_HOSTNAME
+    ./iobroker add $8_icon --host $MY_HOSTNAME
+    ./iobroker add $9_icon --host $MY_HOSTNAME
+#   ./iobroker add $10_icon --host $MY_HOSTNAME
     
     
 else
@@ -40,6 +40,5 @@ else
 fi
 }
 
-
-
-
+#--------------- start script ----------------
+0_quastion_install_icons_for_vis
