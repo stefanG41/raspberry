@@ -90,11 +90,17 @@ cd /opt/iobroker
 ./iobroker add synology  --host $MY_HOSTNAME
 ./iobroker add telegram  --host $MY_HOSTNAME
 ./iobroker add vis  --host $MY_HOSTNAME
+./iobroker add javascript  --host $MY_HOSTNAME
 }
 
 8_setup_installation_info ()
 {
 echo " reboot is required"
+echo " to enable the Zigbee CC2531 USB dongle, put the stick on the raspi and search with command"
+echo " ls -lh /dev/serial/by-id/     if the command give you no output you should check the USB stick"
+echo " COM-Conncetionname need to add the infromation from this output, like exapmle: "
+echo " /dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X001xxxxxx2440-if00 "
+echo " the only what need to modify is between  CDC___xxxxxxxx-if00 "
 }
 
 0_quastion_hostname_modify_hosts
