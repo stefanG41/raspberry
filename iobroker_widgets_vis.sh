@@ -10,43 +10,43 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
 
     MY_HOSTNAME=`uname -n`
 
-    a_icon='vis-hqwidgets'
-    b_icon='vis-bars'
-    c_icon='vis-canvas-gauges'
-    d_icon='vis-fancyswitch'
-    e_icon='vis-history'
-    f_icon='vis-jqui-mfd'
-    g_icon='vis-justgage'
-    h_icon='vis-map'
-    i_icon='vis-metro'
-    j_icon='vis-players'
-    k_icon='vis-timeandweather'
-    l_icon='vis-colorpicker'
-    m_icon='vis-keyboard'
-    n_icon='vis-lcars'
-    o_icon='vis-plumb'
-    p_icon='vis-rgraph'
-    q_icon='vis-weather'
+    a_widgets='vis-hqwidgets'
+    b_widgets='vis-bars'
+    c_widgets='vis-canvas-gauges'
+    d_widgets='vis-fancyswitch'
+    e_widgets='vis-history'
+    f_widgets='vis-jqui-mfd'
+    g_widgets='vis-justgage'
+    h_widgets='vis-map'
+    i_widgets='vis-metro'
+    j_widgets='vis-players'
+    k_widgets='vis-timeandweather'
+    l_widgets='vis-colorpicker'
+    m_widgets='vis-keyboard'
+    n_widgets='vis-lcars'
+    o_widgets='vis-plumb'
+    p_widgets='vis-rgraph'
+    q_widgets='vis-weather'
 
 
     cd /opt/iobroker/
-    ./iobroker add $a_icon --host $MY_HOSTNAME
-    ./iobroker add $b_icon --host $MY_HOSTNAME
-    ./iobroker add $c_icon --host $MY_HOSTNAME
-    ./iobroker add $d_icon --host $MY_HOSTNAME
-    ./iobroker add $e_icon --host $MY_HOSTNAME
-    ./iobroker add $f_icon --host $MY_HOSTNAME
-    ./iobroker add $g_icon --host $MY_HOSTNAME
-    ./iobroker add $h_icon --host $MY_HOSTNAME
-    ./iobroker add $i_icon --host $MY_HOSTNAME
-    ./iobroker add $j_icon --host $MY_HOSTNAME
-    ./iobroker add $k_icon --host $MY_HOSTNAME
-    ./iobroker add $l_icon --host $MY_HOSTNAME
-    ./iobroker add $m_icon --host $MY_HOSTNAME
-    ./iobroker add $n_icon --host $MY_HOSTNAME
-    ./iobroker add $o_icon --host $MY_HOSTNAME
-    ./iobroker add $p_icon --host $MY_HOSTNAME
-    ./iobroker add $qicon --host $MY_HOSTNAME
+    ./iobroker add $a_widgets --host $MY_HOSTNAME
+    ./iobroker add $b_widgets --host $MY_HOSTNAME
+    ./iobroker add $c_widgets --host $MY_HOSTNAME
+    ./iobroker add $d_widgets --host $MY_HOSTNAME
+    ./iobroker add $e_widgets --host $MY_HOSTNAME
+    ./iobroker add $f_widgets --host $MY_HOSTNAME
+    ./iobroker add $g_widgets --host $MY_HOSTNAME
+    ./iobroker add $h_widgets --host $MY_HOSTNAME
+    ./iobroker add $i_widgets --host $MY_HOSTNAME
+    ./iobroker add $j_widgets --host $MY_HOSTNAME
+    ./iobroker add $k_widgets --host $MY_HOSTNAME
+    ./iobroker add $l_widgets --host $MY_HOSTNAME
+    ./iobroker add $m_widgets --host $MY_HOSTNAME
+    ./iobroker add $n_widgets --host $MY_HOSTNAME
+    ./iobroker add $o_widgets --host $MY_HOSTNAME
+    ./iobroker add $p_widgets --host $MY_HOSTNAME
+    ./iobroker add $q_widgets --host $MY_HOSTNAME
 
 
 else
@@ -55,4 +55,4 @@ fi
 }
 
 #--------------- start script ----------------
-0_quastion_install_icons_for_vis
+0_quastion_install_widgets_for_vis
