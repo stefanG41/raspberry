@@ -7,34 +7,34 @@ echo "Do you wish to install the icons for vis?"
 echo -n "please choose (y/n)? "
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-  
+
     MY_HOSTNAME=`uname -n`
 
-    1_icon=icons-addictive-flavour-png
-    2_icon=icons-fatcow-hosting
-    3_icon=icons-icons8
-    4_icon=icons-material-png
-    5_icon=icons-material-svg
-    6_icon=icons-mfd-png
-    7_icon=icons-mfd-svg
-    8_icon=icons-open-icon-library-png
-    9_icon=icons-ultimate-png
-#    10_icon=
-   
-    
+    a_icon='icons-addictive-flavour-png'
+    b_icon='icons-fatcow-hosting'
+    c_icon='icons-icons8'
+    d_icon='icons-material-png'
+    e_icon='icons-material-svg'
+    f_icon='icons-mfd-png'
+    g_icon='icons-mfd-svg'
+    h_icon='icons-open-icon-library-png'
+    i_icon='icons-ultimate-png'
+#    j_icon=
+
+
     cd /opt/iobroker/
-#    ./iobroker add $1_icon --host $MY_HOSTNAME
-    ./iobroker add $2_icon --host $MY_HOSTNAME
-    ./iobroker add $3_icon --host $MY_HOSTNAME
-    ./iobroker add $4_icon --host $MY_HOSTNAME
-    ./iobroker add $5_icon --host $MY_HOSTNAME
-    ./iobroker add $6_icon --host $MY_HOSTNAME
-    ./iobroker add $7_icon --host $MY_HOSTNAME
-    ./iobroker add $8_icon --host $MY_HOSTNAME
-    ./iobroker add $9_icon --host $MY_HOSTNAME
-#   ./iobroker add $10_icon --host $MY_HOSTNAME
-    
-    
+#    ./iobroker add $a_icon --host $MY_HOSTNAME
+    ./iobroker add $b_icon --host $MY_HOSTNAME
+    ./iobroker add $c_icon --host $MY_HOSTNAME
+    ./iobroker add $d_icon --host $MY_HOSTNAME
+    ./iobroker add $e_icon --host $MY_HOSTNAME
+    ./iobroker add $f_icon --host $MY_HOSTNAME
+    ./iobroker add $g_icon --host $MY_HOSTNAME
+    ./iobroker add $h_icon --host $MY_HOSTNAME
+    ./iobroker add $i_icon --host $MY_HOSTNAME
+#   ./iobroker add $j_icon --host $MY_HOSTNAME
+
+
 else
     exit
 fi
