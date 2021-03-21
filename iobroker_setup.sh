@@ -8,7 +8,7 @@ read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
     0_set_hostname_modify_hosts
     1_server_update_upgrade
-    2_remove_node_and_nodejs
+   # 2_remove_node_and_nodejs
     3_downloade_node_setup
     4_install_node_and_nodejs
     5_check_nodes_version
@@ -56,6 +56,11 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 4_install_node_and_nodejs ()
 {
 sudo apt-get install -y build-essential libavahi-compat-libdnssd-dev libudev-dev libpam0g-dev nodejs
+sudo apt-get install -y gcc g++ make
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install yarn
+
 }
 
 5_check_nodes_version ()
@@ -84,9 +89,9 @@ cd /opt/iobroker
 ./iobroker add ping  --host $MY_HOSTNAME
 ./iobroker add fritzdect  --host $MY_HOSTNAME
 #./iobroker add bosesoundtouch  --host $MY_HOSTNAME
-./iobroker add harmony  --host $MY_HOSTNAME
+#./iobroker add harmony  --host $MY_HOSTNAME
 #./iobroker add samsung  --host $MY_HOSTNAME
-./iobroker add shelly  --host $MY_HOSTNAME
+#./iobroker add shelly  --host $MY_HOSTNAME
 #./iobroker add synology  --host $MY_HOSTNAME
 ./iobroker add telegram  --host $MY_HOSTNAME
 ./iobroker add vis  --host $MY_HOSTNAME
