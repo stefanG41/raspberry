@@ -16,3 +16,6 @@ cd /opt/iobroker
 ./iobroker add synology  --host $MY_HOSTNAME
 ./iobroker add telegram  --host $MY_HOSTNAME
 ./iobroker add vis  --host $MY_HOSTNAME
+./iobroker add iot  --host $MY_HOSTNAME
+./iobroker add mihome-vacuum  --host $MY_HOSTNAME
+./iobroker add text2command  --host $MY_HOSTNAME
