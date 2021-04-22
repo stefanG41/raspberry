@@ -97,6 +97,9 @@ cd /opt/iobroker
 ./iobroker add vis  --host $MY_HOSTNAME
 ./iobroker add javascript  --host $MY_HOSTNAME
 #./iobroker add innogy-smarthome  --host $MY_HOSTNAME
+./iobroker add iot  --host $MY_HOSTNAME
+./iobroker add mihome-vacuum  --host $MY_HOSTNAME
+./iobroker add text2command  --host $MY_HOSTNAME
 }
 
 8_setup_installation_info ()
